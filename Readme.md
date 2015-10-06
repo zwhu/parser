@@ -2,6 +2,12 @@
 
 「两周自制脚本语言」 的 ES6 版本的练习
 
+## Test
+
+```shell
+npm test
+```
+
 ## TODOList:
 
 - [x] 词法分析器
