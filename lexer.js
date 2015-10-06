@@ -17,7 +17,9 @@ const REGEX = /\s*((\/\/.*)|(\d+)|("(?:\\"|\\\\|\n|[^"])*")|[A-Z_a-z][A-Z_a-z0-9
 
 let tokens = []
 
-let __raw
+/**
+ * 词法分析器
+ */
 export default  class Lexer {
 
   constructor(raw) {
@@ -25,11 +27,17 @@ export default  class Lexer {
   }
 
   read() {
-    return tokens
+    if(tokens[0])
+      return tokens.shift()
+    else
+      return Token.EOF
   }
 
-  peek() {
-
+  peek(i) {
+    if(tokens[i])
+      return tokens[i]
+    else
+      return Token.EOF
   }
 
 }
